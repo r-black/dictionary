@@ -10,10 +10,22 @@ int main()
 	std::cout << dict->Get("test") << std::endl;
 	try
 	{
-		dict->Get("ok");
+		// dict->~Dictionary();
+		std::cout << dict->Get("test") << std::endl;
+		std::cout << dict->Get("ok") << std::endl;
 	}
 	catch (NotFoundKeyException<std::string>& e)
 	{
 		std::cerr << e.what() << std::endl;
+	}
+
+	try
+	{
+		std::cout << dict->Get("ok") << std::endl;
+	}
+	catch (NotFoundKeyException<std::string>& e)
+	{
+		setlocale(LC_ALL, "Russian");
+		std::cerr << "Ключ " << e.GetKey() << " не найден" << std::endl;
 	}
 }
