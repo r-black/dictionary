@@ -4,13 +4,13 @@
 
 int main()
 {
-	Dictionary<std::string, std::string> *dict = new Container<std::string, std::string>;
+	Container<std::string, std::string> *dict = new Container<std::string, std::string>;
 	dict->Set("test", "ok");
 	std::cout << std::boolalpha << dict->IsSet("test") << std::endl;
 	std::cout << dict->Get("test") << std::endl;
 	try
 	{
-		// dict->~Dictionary();
+		// dict->~Container();
 		std::cout << dict->Get("test") << std::endl;
 		std::cout << dict->Get("ok") << std::endl;
 	}

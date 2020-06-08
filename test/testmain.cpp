@@ -8,7 +8,7 @@
 #include "container.h"
 
 TEST_CASE(" dict->Get(\"test\") ok ") {
-	Dictionary<std::string, std::string> *dict = new Container<std::string, std::string>;
+	Container<std::string, std::string> *dict = new Container<std::string, std::string>;
 	dict->Set("test", "ok");
 
 	std::cout << dict->Get("test") << "\n";
@@ -17,7 +17,7 @@ TEST_CASE(" dict->Get(\"test\") ok ") {
 }
 
 TEST_CASE(" dict->Set(\"test\", \"1\") dict->Get(\"test\") 1 ") {
-	Dictionary<std::string, std::string> *dict = new Container<std::string, std::string>;
+	Container<std::string, std::string> *dict = new Container<std::string, std::string>;
 	dict->Set("test", "1");
 
 	std::cout << dict->Get("test") << "\n";
@@ -26,7 +26,7 @@ TEST_CASE(" dict->Set(\"test\", \"1\") dict->Get(\"test\") 1 ") {
 }
 
 TEST_CASE(" dict->IsSet(\"test\", \"ok\") true ") {
-	Dictionary<std::string, std::string> *dict = new Container<std::string, std::string>;
+	Container<std::string, std::string> *dict = new Container<std::string, std::string>;
 	dict->Set("test", "ok");
 
 	std::cout << std::boolalpha << dict->IsSet("test") << std::endl;

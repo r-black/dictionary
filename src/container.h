@@ -38,6 +38,10 @@ template<class TKey, class TValue>
 class Container :public Dictionary<TKey, TValue>
 {
 public:
+	virtual ~Container()
+	{
+		delete this;
+	}
 	const TValue& Get(const TKey& key) const
 	{
 		const auto found = this->store.find(key);
@@ -55,13 +59,11 @@ public:
 	{
 		return this->store.count(key);
 	}
-
-	~Container()
-	{
-		delete this;
-	}
 private:
 	std::map<TKey, TValue> store;
+
+	// Assignment operator is forbidden
+	Container& operator=(const Container&);
 };
 
 #endif
